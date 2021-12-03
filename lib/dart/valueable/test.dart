@@ -1,3 +1,6 @@
+///
+/// 变量
+///
 void main() {
   /// 1、dart变量仅存储对象的引用
   var name = "Jocelyn";
