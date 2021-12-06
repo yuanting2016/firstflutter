@@ -2,12 +2,12 @@
 /// 变量
 ///
 void main() {
-  /// 1、dart变量仅存储对象的引用
+  /// 1------------、dart变量仅存储对象的引用
   var name = "Jocelyn";
-  /// 2、延迟初始化
+  /// 2------------、延迟初始化
   late String description;
 
-  /// 3、final const
+  /// 3------------、final const
   /// 不可变
   final newName = "Jocelyn";
   // 常量
