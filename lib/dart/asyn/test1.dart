@@ -2,17 +2,69 @@ import 'dart:async';
 import 'dart:io';
 
 ///Dart 代码库中有大量返回 Future 或 Stream 对象的函数，这些函数都是 异步 的，它们会在耗时操作（比如I/O）执行完毕前直接返回而不会等待耗时操作执行完毕。
-///--------1、 Future
+///--------1、 Future是定义单个异步操作的结构
 ///使用 async 和 await，在 异步编程 codelab 中有更多描述 https://dart.cn/guides/libraries/library-tour#future
-/// 使用 Future API，具体描述参考 库概览。
-///必须在带有 async 关键字的 异步函数 中使用 await：
-Future<void> main() async {
-  //checkVersion();
-  print('In main: version is ${await lookUpVersion()}');
+Future checkVersion() async {
+  var version = await {
+
+  };
 }
-///--------2、声明异步函数 异步函数 是函数体由 async 关键字标记的函数
-Future<String> lookUpVersion() async => '1.0.0';
-///-------3、Stream 异步数据队列 在Dart语言中，Stream有两种类型，一种是点对点的单订阅流（Single-subscription），另一种则是广播流。
+/// Future常用的一些API
+
+test(){
+  /// then 模拟一个耗时操作，2秒后返回字符串“Hello Dart”，然后在then中接收到异步返回值，并打印出来：
+  Future.delayed(new Duration(seconds: 2), () {
+    return "Hello Dart";
+  }).
+  then((value) => print(value));
+
+  /// catchError
+  Future.delayed(new Duration(seconds: 2), () {
+//      return "Hello Dart";
+    throw AssertionError('Error');
+  }).then((value) {
+    print('success');
+  }).catchError((e) {
+    print(e);
+  });
+
+  /// whenComplete  当请求结束后处理一些操作（无论请求成功还是失败，比如取消loading等操作），那么使用whenComplete回调：
+  Future.delayed(new Duration(seconds: 2), () {
+//      return "Hello Dart";
+    throw AssertionError('Error');
+  }).then((value) {
+    //success
+    print('success');
+  }).catchError((e) {
+    //error
+    print(e);
+  }).whenComplete(() {
+    print('whenComplete');
+  });
+
+  /// wait  使用Future.wait 是一个界面同时发起多个请求时，需要这几个请求都获取数据成功再处理页面UI展示时使用。比如两个网络请求，这俩请求都返回成功后才执行 then，只要有一个返回失败，就会走error回调
+  Future.wait([
+        //2s后返回
+        Future.delayed(new Duration(seconds: 2), () {
+          return 'Hello';
+        }),
+
+        //4s后返回
+        Future.delayed(new Duration(seconds: 4), () {
+          return 'Dart';
+        })
+      ]).then((value) {
+        //success
+        print(value[0] + value[1]);
+      }).catchError((e) {
+        //error
+        print(e);
+      });
+}
+
+
+
+///-------2、Stream  多个异步操作的结果 步数据队列 在Dart语言中，Stream有两种类型，一种是点对点的单订阅流（Single-subscription），另一种则是广播流。
 ///使用 async 关键字和一个 异步循环（使用 await for 关键字标识）。
 ///使用 Stream API。详情参考 库概览 https://dart.cn/guides/libraries/library-tour#stream
 /// 单订阅流，单订阅流的特点是只允许存在一个监听器，即使该监听器被取消后，也不允许再次注册监听器
