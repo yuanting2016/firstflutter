@@ -1,4 +1,4 @@
-/// 泛型  适当地指定泛型可以更好地帮助代码生成、使用泛型可以减少代码重复
+/// 泛型
 /// ----------1、使用集合字面量
 var names = <String>['Seth', 'Kathy', 'Lars'];
 var uniqueNames = <String>{'Seth', 'Kathy', 'Lars'};
@@ -7,7 +7,6 @@ var pages = <String, String>{
   'robots.txt': 'Hints for web robots',
   'humans.txt': 'We are people, not machines'
 };
-
 ///-----------2、使用类型参数化的构造函数
 void main() {
   var nameSet = Set<String>.from(names);
@@ -19,7 +18,10 @@ void main() {
   print(namess is List<String>); // true
 }
 
-///-----------3、限制参数化类型
+
+
+
+///-----------4、限制参数化类型
 ///有时使用泛型的时候，你可能会想限制可作为参数的泛型范围，也就是参数必须是指定类型的子类，这时候可以使用 extends 关键字
 class Foo<T extends Object> {
   // Any type provided to Foo for T must be non-nullable.

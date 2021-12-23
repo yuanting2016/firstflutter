@@ -28,6 +28,11 @@ void main() {
 //     }
 //     candidate.interview();
 //   }
+
+
+
+
+
   ///------------5、Switch 和 Case
   ///Switch 语句在 Dart 中使用 == 来比较整数、字符串或编译时常量，比较的两个对象必须是同一个类型且不能是子类并且没有重写 == 操作符。 枚举类型非常适合在 Switch 语句中使用
   ///Dart 支持空的 case 语句，允许其以 fall-through 的形式执行
@@ -54,6 +59,8 @@ void main() {
   //     break;
   // }
  //注意:每个 case 子句都可以有局部变量且仅在该 case 语句内可见。
+
+
   ///------------6、在开发过程中，可以在条件表达式为 false 时使用 — assert(条件, 可选信息); — 语句来打断代码的执行
   //assert(text != null);
   // 如何判断 assert 是否生效？assert 是否生效依赖开发工具和使用的框架：

@@ -3,6 +3,14 @@ void main() {
   /// ---------1、抛出异常 Throw
   throw FormatException('Expected at least 1 section');
   // throw 'Out of llamas!';
+
+
+
+
+
+
+
+
   ///---------2、捕获异常 catch
   // try {
   //   breedMoreLlamas();
@@ -22,4 +30,5 @@ void main() {
   ///可以使用 on 或 catch 来捕获异常，使用 on 来指定异常类型，使用 catch 来捕获异常对象，两者可同时使用。
   ///关键字 rethrow 可以将捕获的异常再次抛出
   ///----------3、finally 无论是否抛出异常，finally 语句始终执行，如果没有指定 catch 语句来捕获异常，则异常会在执行完 finally 语句后抛出：
+
 }

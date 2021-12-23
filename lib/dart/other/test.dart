@@ -3,7 +3,7 @@
 /// 代码库不仅只是提供 API 而且还起到了封装的作用：以下划线（_）开头的成员仅在代码库中可见。 每个 Dart 程序都是一个库，即便没有使用关键字 library 指定
 /// -----------1、使用库
 /// import 'dart::html'
-/// import 'package:test/test.dart';
+/// import 'package:test/valueable.dart';
 /// 指定库前缀 如果你导入的两个代码库有冲突的标识符，你可以为其中一个指定前缀。比如如果 library1 和 library2 都有 Element 类，那么可以这么处理
 // import 'package:lib1/lib1.dart';
 // import 'package:lib2/lib2.dart' as lib2;
