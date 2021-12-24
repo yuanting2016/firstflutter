@@ -1,5 +1,5 @@
 ///
-/// 内置类型
+/// 内置类型 number String bool
 ///
 void main() {
   /// 1------------、Numbers,其子类有int和double
@@ -51,7 +51,6 @@ multi-line string.""";
 
 
 
-
   /// 3------------、布尔类型  bool 关键字表示布尔类型，布尔类型只有两个对象 true 和 false，两者都是编译时常量
   var name = '';
   if (name.isEmpty) {}
@@ -73,26 +72,11 @@ multi-line string.""";
   var list22 = [0, ...?list11];
   assert(list22.length == 1);
 
-
-
-
-
-
   /// 5------------、在 Dart 中，set 是一组特定元素的无序集合。 Dart 支持的集合由集合的字面量和 Set 类提供
   var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
   var names = <String>{};
   // Set<String> names = {}; // This works, too.
   // var names = {}; // Creates a map, not a set.
-
-
-
-
-
-
-
-
-
-
   /// 6------------、Map 是用来关联 keys 和 values 的对象。其中键和值都可以是任何类型的对象。每个 键 只能出现一次但是 值 可以重复出现多次
   var gifts = {
     // Key:    Value

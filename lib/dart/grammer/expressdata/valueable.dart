@@ -5,6 +5,9 @@ void main() {
   /// 1------------、dart变量仅存储对象的引用
   var name = "Jocelyn";
 
+  // Dart里面没有private public protected 等关键字，对变量，方法，类前加下划线_表示仅限库使用
+  var _testName = "Jocelyn";
+
 
 
 
