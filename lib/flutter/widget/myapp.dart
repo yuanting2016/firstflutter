@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
         body: RaisedButton(onPressed: () {
           setState(() {
             _i++;
-            EventBus.getDefault().post(_i);//发送EnentBus消息
+         //   EventBus.getDefault().post(_i);//发送EnentBus消息
           });
         }, child: Center(child: Text("点击我$_i"),),),
       ),
