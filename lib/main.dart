@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'flutter/animation/heroanimationroute.dart';
 import 'flutter/animation/scaleanimationroute.dart';
 
 void main() {
@@ -59,7 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            ScaleAnimationRoute(),
+            // ScaleAnimationRoute(),
+            HeroAnimationRoute(),
           ],
         ),
       ),
