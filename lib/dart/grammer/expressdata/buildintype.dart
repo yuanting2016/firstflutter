@@ -1,3 +1,4 @@
+import 'dart:math';
 ///
 /// 内置类型 number String bool
 ///
@@ -14,9 +15,13 @@ void main() {
   int temp = money.toInt();
   double ages = 18.0.toDouble();
 
+  ///除了常见的 “+ - * /”以及位运算符外，还可以使用继承自num的abs() round()等方法
+  int roundY = temp.round();
+  int abs = ages.abs().toInt();
 
-
-
+  ///如果当前高级运算方法的需求num无法满足，还可以使用dart:math库，这个库提供了诸如三角函数、指数、对数、平方根等方法
+  double sqrtResult = sqrt(ages);
+  double tanResult = tan(30);
 
 
 
@@ -31,7 +36,9 @@ void main() {
   var words = 'your age is ${agess}!';
 
   ///两个字符串可以用==来比较是否相等
-  if (agess == "agess") {}
+  if (agess == "agess") {
+    print("result is ok");
+  }
 
   ///三个单引号或者三个双引号也能创建多行字符串：
   var s1 = '''
@@ -54,6 +61,10 @@ multi-line string.""";
   /// 3------------、布尔类型  bool 关键字表示布尔类型，布尔类型只有两个对象 true 和 false，两者都是编译时常量
   var name = '';
   if (name.isEmpty) {}
+  /// 注意不能像kotlin java 一样在判断 if(name != null)
+  // if(name != null) {
+  //
+  // }
 
 
 
@@ -72,24 +83,24 @@ multi-line string.""";
   var list22 = [0, ...?list11];
   assert(list22.length == 1);
 
-  /// 5------------、在 Dart 中，set 是一组特定元素的无序集合。 Dart 支持的集合由集合的字面量和 Set 类提供
-  var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
-  var names = <String>{};
-  // Set<String> names = {}; // This works, too.
-  // var names = {}; // Creates a map, not a set.
-  /// 6------------、Map 是用来关联 keys 和 values 的对象。其中键和值都可以是任何类型的对象。每个 键 只能出现一次但是 值 可以重复出现多次
-  var gifts = {
-    // Key:    Value
-    'first': 'partridge',
-    'second': 'turtledoves',
-    'fifth': 'golden rings'
-  };
-
-  var nobleGases = {
-    2: 'helium',
-    10: 'neon',
-    18: 'argon',
-  };
+  // /// 5------------、在 Dart 中，set 是一组特定元素的无序集合。 Dart 支持的集合由集合的字面量和 Set 类提供
+  // var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+  // var names = <String>{};
+  // // Set<String> names = {}; // This works, too.
+  // // var names = {}; // Creates a map, not a set.
+  // /// 6------------、Map 是用来关联 keys 和 values 的对象。其中键和值都可以是任何类型的对象。每个 键 只能出现一次但是 值 可以重复出现多次
+  // var gifts = {
+  //   // Key:    Value
+  //   'first': 'partridge',
+  //   'second': 'turtledoves',
+  //   'fifth': 'golden rings'
+  // };
+  //
+  // var nobleGases = {
+  //   2: 'helium',
+  //   10: 'neon',
+  //   18: 'argon',
+  // };
 
   ///Map 可以像 List 一样支持使用扩展操作符（... 和 ...?）以及集合的 if 和 for 操作。你可以查阅 List 扩展操作符 和 List 集合操作符 获取更多相关信息。
 }
