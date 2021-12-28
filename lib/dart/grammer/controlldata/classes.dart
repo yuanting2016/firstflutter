@@ -33,17 +33,17 @@ void main(){
     /// 命名式构造函数
     const double xOrigin = 0;
     const double yOrigin = 0;
-    class Point1 {
-    double x = 0;
-    double y = 0;
-
-    Point1(this.x, this.y);
-
-    // Named constructor
-    Point1.origin():
-          x = xOrigin,
-          y = yOrigin;
-    }
+    // class Point1 {
+    // double x = 0;
+    // double y = 0;
+    //
+    // Point1(this.x, this.y)
+    //
+    // // Named constructor
+    // Point1.test():
+    //       x = xOrigin,
+    //       y = yOrigin;
+    // }
 
     /// 重定向构造函数
    class Point2 {
@@ -67,6 +67,7 @@ class ImmutablePoint {
 }
     ///工厂构造函数
     ///使用 factory 关键字标识类的构造函数将会令该构造函数变为工厂构造函数，这将意味着使用该构造函数构造类的实例时并非总是会返回新的实例对象。例如，工厂构造函数可能会从缓存中返回一个实例，或者返回一个子类型的实例。
+    //todo()
 class Logger {
   final String name;
   bool mute = false;
