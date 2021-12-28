@@ -6,9 +6,10 @@
 ///
 void main() {
   /// 1------------、dart变量仅存储对象的引用，所有的对象均继承至Object,没有初始化的变量均为null,不会出现undefine或者烫烫烫烫
-  var name = "Jocelyn";
+  var name = 222;
 
-  // String name1 = "Jocelyn";
+  String name1 ;
+
 
   // Dart里面没有private public protected 等关键字，对变量，方法，类前加下划线_表示仅限库使用
   var _testName = "Jocelyn";
@@ -43,4 +44,5 @@ void main() {
   /// 在使用空安全的关键字时，需要将项目所有package迁移至空安全
   /// 迁移方法 https://dart.dev/null-safety/migration-guide
   int? lineCount = null;
+
 }

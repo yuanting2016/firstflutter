@@ -36,6 +36,9 @@ void main() {
 void enableFlags({bool bold = true, bool hidden = true}) {
 
 }
+
+
+
 void test(){
   // enableFlags(true,false);
   enableFlags(bold: true, hidden: false);

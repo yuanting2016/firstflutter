@@ -14,6 +14,7 @@ void main(){
 }
 
 /// -----------级联运算符 级联运算符 (.., ?..) 可以让你在同一个对象上连续调用多个对象的变量或方法。
+// todo buneng zuojilian
 // var paint = Paint()
 //   ..color = Colors.black
 //   ..strokeCap = StrokeCap.round

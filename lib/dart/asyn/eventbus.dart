@@ -27,6 +27,7 @@ class EventBus {
   }
 
   void unregister() {
+    //todo
     _streamController.close();
   }
 }

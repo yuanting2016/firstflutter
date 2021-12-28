@@ -161,18 +161,31 @@ testSkip1() async{
 //该方法只是从Stream中获取元素时跳过，被跳过的元素依然是被执行了的，所耗费的时间依然存在，其实只是跳过了执行完的结果而已
 //Stream<T> skipWhile(bool test(T element)) 方法与takeWhile用法是相同的，传入一个函数对结果进行判断，表示跳过满足条件的
 /// StreamController 流控制
+///
 testController() async{
   // 创建
   StreamController streamController = StreamController();
+  Stream stream = streamController.stream.asBroadcastStream();
+  stream.listen(
+      print,
+      onError: print,
+      onDone: ()=>print("onDone"));
+  stream.listen(
+      print,
+      onError: print,
+      onDone: ()=>print("onDone"));
   // 放入事件
   streamController.add('element_1');
   streamController.addError("this is error");
   streamController.sink.add('element_2');
-  streamController.stream.listen(
-    print,
-  onError: print,
-  onDone: ()=>print("onDone"));
+  // todo
+
 }
+ void main(){
+   testController();
+ }
+
+
 /// 广播流
 testBroadcast() async{
   // 调用 Stream 的 asBroadcastStream 方法创建
