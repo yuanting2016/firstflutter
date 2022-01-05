@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/dart/asyn/eventbus.dart';
 
 void main() => runApp(new MyApp());
 
@@ -21,7 +20,6 @@ class _MyAppState extends State<MyApp> {
         body: RaisedButton(onPressed: () {
           setState(() {
             _i++;
-         //   EventBus.getDefault().post(_i);//发送EnentBus消息
           });
         }, child: Center(child: Text("点击我$_i"),),),
       ),
@@ -35,9 +33,6 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _i = 1;
     debugPrint("initState");
-    EventBus.getDefault().register((int i) { //注册
-      debugPrint("enent bus ${i}"); //接受消息打印
-    });
   }
 
 
@@ -47,6 +42,5 @@ class _MyAppState extends State<MyApp> {
     ///销毁
     super.deactivate();
     debugPrint("deactivate");
-    EventBus.getDefault().unregister();  //销毁
   }
 }
